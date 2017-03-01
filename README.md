@@ -46,7 +46,7 @@ mobile.bluetoothClient.stopGetInputStream();
 
 # for example
 
-# build the connection
+<b>build the connection</b><br></br>
 mobile.bluetoothClient.init(function(data){
 			},function(error){
 			});
@@ -55,30 +55,30 @@ mobile.bluetoothClient.startService(function(data){
 },function(error){
 },"AAA-SSS");
 
-# monitor the connection state
+<b>monitor the connection state</b><br></br>
 mobile.bluetoothClient.startGetServerState(function(data){
     console.log(data);
 },function(error){
 },1000);
 
-# stop monitor
+<b>stop monitor</b><br></br>
 mobile.bluetoothClient.stopGetServerState();
 
-# get remote message
+<b>get remote message</b><br></br>
 mobile.bluetoothClient.startGetInputStream(function(data){
     console.log(data);
 },function(error){
 },delay);
 
-# stop getting remote message
+<b>stop getting remote message</b><br></br>
 mobile.bluetoothClient.stopGetInputStream();
 
-# send message
+<b>send message</b><br></br>
 mobile.bluetoothClient.sendMessage(function(data){
 },function(error){
 },"hello there");
 
-# stop connection
+<b>stop connection</b><br></br>
 mobile.bluetoothClient.stopService(function(data){
 },function(error){
 });
