@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="my-bluetooth-client" version="1.0.1">
+    <name>BluetoothClient</name>
+    <description>Cordova BluetoothClient Plugin</description>
+    <license>Apache 2.0 License</license>
+    <keywords>bluetooth,client</keywords>
+	<!--<engines>
+		<engine name="cordova" version=">=1.7.0" />
+		<engine name="cordova-android" version=">=1.8.0" />
+	</engines>-->
+	<js-module src="www/bluetooth_client.js" name="BluetoothClient">
+	  <clobbers target="mobile.bluetoothClient" />
+	</js-module>
+	<platform name="android">
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.BLUETOOTH"/>
+			<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+		</config-file>
+		<config-file target="config.xml" parent="/*">
+			<feature name="BluetoothClient">
+				<param name="android-package" value="org.apache.cordova.plugin.BluetoothClient"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/android/BluetoothClient.java" target-dir="src/org/apache/cordova/plugin" />
+	</platform>
+</plugin>
